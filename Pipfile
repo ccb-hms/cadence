@@ -13,6 +13,7 @@ openpyxl = "*"
 timeboard = "*"
 holidays = "*"
 faker = "*"
+tox = "*"
 
 [dev-packages]
 jupyterlab = "*"
