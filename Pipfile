@@ -4,7 +4,6 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-cadence = {file = ".", editable = true}
 numpy = "<2.0"
 pandas = "*"
 pyarrow = "*"
@@ -14,6 +13,7 @@ timeboard = "*"
 holidays = "*"
 faker = "*"
 tox = "*"
+cadence = {file = ".", editable = true}
 
 [dev-packages]
 jupyterlab = "*"
