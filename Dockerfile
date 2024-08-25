@@ -35,7 +35,7 @@ RUN --mount=source=.git,target=.git,type=bind \
     pipenv install --system --deploy --ignore-pipfile --dev
 
 # Run the jupyter lab server
-# RUN mkdir -p /run_scripts
-# COPY /bash_scripts/docker_entry /run_scripts
-# RUN chmod +x /run_scripts/*
-# CMD ["/bin/bash", "/run_scripts/docker_entry"]
+RUN mkdir -p /run_scripts
+COPY /bash_scripts/docker_entry /run_scripts
+RUN chmod +x /run_scripts/*
+CMD ["/bin/bash", "/run_scripts/docker_entry"]
