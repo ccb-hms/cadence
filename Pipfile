@@ -16,6 +16,7 @@ tox = "*"
 cadence = {file = ".", editable = true}
 pytest = "*"
 pytest-cov = "*"
+tqdm = "*"
 
 [dev-packages]
 jupyterlab = "*"
