@@ -1,5 +1,6 @@
 <p float="left">
     <img style="vertical-align: top" src="./images/cadence01.jpeg" width="25%" />
+    <img style="vertical-align: top" src="./images/ccb_logo_text.jpeg" width="25%" />
 </p>
 
 ## The CCB Meeting Scheduling Repository ##
