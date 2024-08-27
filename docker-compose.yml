@@ -19,4 +19,4 @@ services:
       - "8888:8888"
     volumes:
       - .:/app
-      - /home/andreas/data:/app/data
+      - $HOME/data:/app/data
