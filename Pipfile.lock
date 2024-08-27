@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "6af6b76ae761044194b516cc1fab1558b0afffc6c86047ba43ead10eccf328fd"
+            "sha256": "b83f42ee233e292ff29fe626655ebca918180fb7eab6527b55a7f68353476969"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -549,6 +549,15 @@
             "markers": "python_version >= '3.8'",
             "version": "==4.18.0"
         },
+        "tqdm": {
+            "hashes": [
+                "sha256:90279a3770753eafc9194a0364852159802111925aa30eb3f9d85b0e805ac7cd",
+                "sha256:e1020aef2e5096702d8a025ac7d16b1577279c9d63f8375b63083e9a5f0fcbad"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.7'",
+            "version": "==4.66.5"
+        },
         "tzdata": {
             "hashes": [
                 "sha256:2674120f8d891909751c38abcdfd386ac0a5a1127954fbc332af6b5ceae07efd",
@@ -1080,12 +1089,12 @@
         },
         "jupyterlab": {
             "hashes": [
-                "sha256:343a979fb9582fd08c8511823e320703281cd072a0049bcdafdc7afeda7f2537",
-                "sha256:807a7ec73637744f879e112060d4b9d9ebe028033b7a429b2d1f4fc523d00245"
+                "sha256:73b6e0775d41a9fee7ee756c80f58a6bed4040869ccc21411dc559818874d321",
+                "sha256:ae7f3a1b8cb88b4f55009ce79fa7c06f99d70cd63601ee4aa91815d054f46f75"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==4.2.4"
+            "version": "==4.2.5"
         },
         "jupyterlab-pygments": {
             "hashes": [
