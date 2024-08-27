@@ -4,6 +4,7 @@ Core for Computational Biomedicine at Harvard Medical School
 Created in 2024 by Andreas Werdich
 """
 
+import argparse
 import pandas as pd
 import timeboard as tb
 import holidays
@@ -216,7 +217,7 @@ class Meetings:
                 reset_index(drop=True)
         return cal_df_new
 
-    def create_timeboard(self, start_date: str, end_date: str, start_name: str, meeting_day=2) -> pd.DataFrame:
+    def create_timeboard(self, start_date: str, end_date: str, start_name=None, meeting_day=2) -> pd.DataFrame:
         """
         This method creates the meeting schedule using the timeboard library.
 
@@ -229,7 +230,9 @@ class Meetings:
         """
         us_ma_holidays = holidays.country_holidays('US', subdiv='MA')
         # Rotate the speakers so that the start_name comes first
-        nlist = cyclic_permutate(lst_in=list(self.name_df[self.col_dict.get('name_col')].values), name=start_name)
+        nlist = list(self.name_df[self.col_dict.get('name_col')].values)
+        if start_name is not None:
+            nlist = cyclic_permutate(lst_in=list(self.name_df[self.col_dict.get('name_col')].values), name=start_name)
         # Define the list of speakers
         team_order = tb.RememberingPattern(nlist)
         # Set a weekly marker for every Wednesday
@@ -255,7 +258,18 @@ class Meetings:
 
 
 def main():
-    pass
+    msg = 'Create a meeting schedule from a list of names.'
+    parser = argparse.ArgumentParser(description=msg)
+    parser.add_argument('-n', '--names', help='"names, separated by commas"')
+    parser.add_argument('-s', '--start', help='start date (str)')
+    parser.add_argument('-e', '--end', help='end date (str)')
+    args = parser.parse_args()
+    names = args.names.split(',')
+    # Remove space before the names
+    names = [name.lstrip() for name in names]
+    cal = Meetings(name_list=names).create_timeboard(start_date=args.start, end_date=args.end)
+    # Print the schedule (we could also save it, but here, just show it
+    print(cal)
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
