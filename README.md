@@ -31,8 +31,7 @@ docker compose up
 ``` 
 This creates a container and starts a jupyter server which can be accessed through a web browser.
 
-5. Access Jupyter Lab: Click on the link that starts with `localhost:8888` provided by the 
-output of the last command.
+5. Access the jupyter lab server from your browser by clicking on the link that starts with `localhost:8888`.
 
 ## Create a meeting schedule ##
 
@@ -60,17 +59,20 @@ This is it. The output of the `create_timeboard` method is a dataframe which can
 saved and imported into other applications, like calendars.
 
 <p float="left">
-    <img style="vertical-align: top" src="./images/example_schedule.png" width="25%" />
+    <img style="vertical-align: top" src="./images/example_schedule.png" width="50%" />
 </p>
 
 ## Run tests ##
 [Pytest](https://docs.pytest.org/en/stable/) is a popular testing framework that makes it easy to write small, 
-readable tests. It can scale to support complex functional testing for applications and libraries. Pytest will 
+readable tests. 
+
+The pytest framework scales to support complex functional testing for applications and libraries. Pytest will 
 automatically discover and run all the test files in the `./tests` directory that follow the naming conventions 
 (i.e., files starting with test_ or ending with _test.py). You can also specify the test directory 
 explicitly by running pytest tests/ if your test directory is named tests. 
 Pytest will execute all the discovered test cases and provide a detailed summary of passing and failing tests.
-To run the tests for this project, simply run pytest inside the docker container:
+
+To run the tests for this project, simply run the pytest app inside the docker container:
 ```bash
 docker compose run app python -m pytest
 ```
