@@ -1,3 +1,8 @@
+[![Python 3.11.8](
+https://img.shields.io/badge/python-3.11.8-blue.svg
+)](
+https://www.python.org/downloads/release/python-3118/
+)
 [![pytest](
 https://github.com/ccb-hms/cadence/actions/workflows/pytest.yml/badge.svg?branch=main
 )](
