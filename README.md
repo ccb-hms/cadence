@@ -1,3 +1,8 @@
+[![docker](
+https://github.com/ccb-hms/cadence/actions/workflows/docker.yml/badge.svg?branch=develop
+)](
+https://github.com/ccb-hms/cadence/actions/workflows/docker.yml)
+
 <p float="left">
     <img style="vertical-align: top" src="./images/cadence01.jpeg" width="25%" />
 </p>
