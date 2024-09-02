@@ -16,7 +16,7 @@ def test_group_faker():
     gf = GroupFaker(n_members=n_members,
                     n_groups=n_groups)
     my_group = gf.create_fake_research_group()
-    assert my_group.shape == (n_members, 5)
+    assert my_group.shape == (n_members, 4)
 
 
 
