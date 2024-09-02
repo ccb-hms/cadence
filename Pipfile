@@ -17,6 +17,8 @@ pytest = "*"
 pytest-cov = "*"
 tqdm = "*"
 cadence = {file = ".", editable = true}
+exceptiongroup = "*"
+tomli = "*"
 
 [dev-packages]
 jupyterlab = "*"

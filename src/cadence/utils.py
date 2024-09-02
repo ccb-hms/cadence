@@ -4,6 +4,8 @@ Core for Computational Biomedicine at Harvard Medical School
 Created in 2024 by Andreas Werdich
 """
 
+from __future__ import annotations
+
 import os
 import shutil
 import contextlib

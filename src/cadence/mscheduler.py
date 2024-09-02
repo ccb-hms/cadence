@@ -3,6 +3,7 @@ Tools for creating weekly meetings
 Core for Computational Biomedicine at Harvard Medical School
 Created in 2024 by Andreas Werdich
 """
+from __future__ import annotations
 
 import argparse
 import pandas as pd
