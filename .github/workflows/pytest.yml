@@ -33,5 +33,5 @@ jobs:
 
       - name: Run tests
         run: |
-          pipenv install --dev
+          pipenv install --dev --ignore-pipfile
           pipenv run python -m pytest
