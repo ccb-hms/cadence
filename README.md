@@ -34,7 +34,7 @@ cd cadence && docker compose build
 ````
 This image will include all the specifications from the Dockerfile based on 
 the official [python 3.11](https://hub.docker.com/_/python/tags) docker image and all 
-dependencies described in the project's `Pipfile`.
+dependencies described in the project's [Pipfile](./Pipfile).
 
 4. Run the docker container:
 ```bash
@@ -43,6 +43,44 @@ docker compose up
 This creates a container and starts a jupyter server which can be accessed through a web browser.
 
 5. Access the jupyter lab server from your browser by clicking on the link that starts with `localhost:8888`.
+
+## Install without docker ##
+For installation in a local programming environment we use [Pipenv](https://pipenv.pypa.io/en/latest/) 
+to create a pure, repeatable, application environment. 
+Mac/windows users should install pipenv into their main python environment as described by the
+package [installation instructions](https://pipenv.pypa.io/en/latest/installation.html).
+Pipenv is a packaging tool for Python that solves some common problems associated with the typical workflow using pip, 
+virtualenv, and the good old requirements.txt. It combines the functionalities of pip and virtualenv into one tool, 
+providing a smooth and convenient workflow for developers.
+
+With Pipenv, project dependencies and the virtual environment can be managed easily. 
+It uses a Pipfile and Pipfile.lock to keep track of project dependencies with package versions, 
+similar to how package.json works in Node.js projects or Gemfile in Ruby.
+
+Pipenv manages dependencies on a per-project basis. 
+To install this package, change into your project’s directory and run:
+```bash
+# Install the package. This assumes that Python version 3.11 is set as the current global python interpreter. 
+pipenv install -e .
+# Next, install the dev dependencies
+pipenv install --dev
+# Lastly, run the jupyter lab server in the new environment
+pipenv run jupyer lab
+```
+### Install with other Python versions ###
+The package was written for Python 3.11.8 as defined within the project's [Pipfile](./Pipfile).
+However, it comes with compatibility libraries to ensure that it can be used with lower Python versions. 
+To install this package with a different version of Python, let's say Python 3.10, use the *--python* flag:
+```bash
+# Install the package using python 3.10 instead of the version defined in the project's Pipfile
+pipenv install -e . --python=3.10
+```
+It is also possible to install the package using a local Python interpreter that is installed in a specific directory,
+for example, in a virtual environment created with [Miniconda](https://docs.anaconda.com/miniconda/):
+```bash
+pipenv install -e , --python=/home/.../miniconda3/envs/pipenv-test/bin/python
+```
+Where `pipenv-test` is the directory that contains the executable Python interpreter created by Miniconda.
 
 ## Create a meeting schedule ##
 
