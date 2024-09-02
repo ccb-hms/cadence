@@ -1,7 +1,7 @@
 [![pytest](
 https://github.com/ccb-hms/cadence/actions/workflows/pytest.yml/badge.svg?branch=main
 )](
-https://github.com/ccb-hms/cadence/actions/workflows/pytest.yml
+https://github.com/ccb-hms/cadence/workflows/pytest.yml
 )
 [![docker](
 https://github.com/ccb-hms/cadence/actions/workflows/docker.yml/badge.svg?branch=main
