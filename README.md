@@ -1,7 +1,8 @@
 
 [![Pyscaffold](
 https://img.shields.io/badge/-PyScaffold-005CA0?logo=pyscaffold
-)](https://pyscaffold.org/)
+)](https://pyscaffold.org/
+)
 [![Python 3.11.8](
 https://img.shields.io/badge/python-3.11.8-blue.svg
 )](
