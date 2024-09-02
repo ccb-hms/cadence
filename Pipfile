@@ -13,10 +13,10 @@ timeboard = "*"
 holidays = "*"
 faker = "*"
 tox = "*"
-cadence = {file = ".", editable = true}
 pytest = "*"
 pytest-cov = "*"
 tqdm = "*"
+cadence = {file = ".", editable = true}
 
 [dev-packages]
 jupyterlab = "*"
