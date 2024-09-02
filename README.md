@@ -3,7 +3,6 @@ https://github.com/ccb-hms/cadence/actions/workflows/pytest.yml/badge.svg?branch
 )](
 https://github.com/ccb-hms/cadence/actions/workflows/pytest.yml
 )
-
 [![docker](
 https://github.com/ccb-hms/cadence/actions/workflows/docker.yml/badge.svg?branch=develop
 )](
