@@ -16,9 +16,9 @@ tox = "*"
 pytest = "*"
 pytest-cov = "*"
 tqdm = "*"
-cadence = {file = ".", editable = true}
 exceptiongroup = "*"
 tomli = "*"
+cadence = {file = ".", editable = true}
 
 [dev-packages]
 jupyterlab = "*"
