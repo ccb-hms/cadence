@@ -62,10 +62,6 @@ Pipenv is a packaging tool for Python that solves some common problems associate
 virtualenv, and the good old requirements.txt. It combines the functionalities of pip and virtualenv into one tool, 
 providing a smooth and convenient workflow for developers.
 
-With Pipenv, project dependencies and the virtual environment can be managed easily. 
-It uses a Pipfile and Pipfile.lock to keep track of project dependencies with package versions, 
-similar to how package.json works in Node.js projects or Gemfile in Ruby.
-
 Pipenv manages dependencies on a per-project basis. 
 To install this package, change into your project’s directory and run:
 ```bash
