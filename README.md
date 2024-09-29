@@ -1,4 +1,3 @@
-
 [![Pyscaffold](
 https://img.shields.io/badge/-PyScaffold-005CA0?logo=pyscaffold
 )](https://pyscaffold.org/
@@ -9,7 +8,7 @@ https://img.shields.io/badge/python-3.11.8-blue.svg
 https://www.python.org/downloads/release/python-3118/
 )
 [![pytest](
-https://github.com/ccb-hms/cadence/actions/workflows/pytest.yml/badge.svg?branch=main
+https://github.com/ccb-hms/cadence/actions/workflows/pytest.yml/badge.svg?branch=develop
 )](
 https://github.com/ccb-hms/cadence/actions/workflows/pytest.yml
 )
