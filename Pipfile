@@ -4,26 +4,25 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+cadence = {file = ".", editable = true}
 numpy = "<2.0"
+pytest = "*"
+pytest-cov = "*"
+tox = "*"
 pandas = "*"
 pyarrow = "*"
-fastparquet = "*"
 openpyxl = "*"
 timeboard = "*"
 holidays = "*"
 faker = "*"
-tox = "*"
-pytest = "*"
-pytest-cov = "*"
 tqdm = "*"
 exceptiongroup = "*"
 tomli = "*"
-cadence = {file = ".", editable = true}
 
 [dev-packages]
 jupyterlab = "*"
 ipywidgets = "*"
 
 [requires]
-python_version = "3.11"
-python_full_version = "3.11.8"
+python_version = "3.12"
+python_full_version = "3.12.3"
