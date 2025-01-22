@@ -13,9 +13,14 @@ services:
     #- AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
     #- AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
     - HOME=/app
-    - DATA_ROOT=/app/data
+    - DATA_DIR=/app/data
     ports:
       - "8888:8888"
     volumes:
       - .:/app
-      - $HOME/data:/app/data
+      - appdata:/app/data
+      - /home/andreas/data:/app/drivedata
+
+volumes:
+  appdata:
+    external: false
