@@ -1,6 +1,6 @@
 services:
   app:
-    image: cadence:01
+    image: cadence:latest
     container_name: cadence
     build: 
       context: .
@@ -18,9 +18,8 @@ services:
       - "8888:8888"
     volumes:
       - .:/app
-      - appdata:/app/data
-      - /home/andreas/data:/app/drivedata
+      - /home/andreas/data:/app/data
 
-volumes:
-  appdata:
-    external: false
+#volumes:
+#  appdata:
+#    external: false
