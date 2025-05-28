@@ -1,7 +1,7 @@
 """ test the utils module """
 
-__author__ = "awerdich"
-__copyright__ = "awerdich"
+__author__ = "Andreas Werdich"
+__copyright__ = "Core for Computational Biomedicine at Harvard Medical School"
 __license__ = "CC0-1.0"
 
 from cadence.utils import GroupFaker

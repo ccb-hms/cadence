@@ -1,25 +1,22 @@
 import pytest
+import os
+from tempfile import TemporaryDirectory
+from cadence.utils import FileOP
 
-from cadence.skeleton import fib, main
 
-__author__ = "awerdich"
-__copyright__ = "awerdich"
+__author__ = "Andreas Werdich"
+__copyright__ = "Core for Computational Biomedicine at Harvard Medical School"
 __license__ = "CC0-1.0"
 
+def test_download():
+    """ Download the CCB member file """
+    group_members_file_name = 'ccb_members_2025.xlsx'
+    url_base = 'https://dsets.s3.us-east-1.amazonaws.com'
+    url = os.path.join(url_base, group_members_file_name)
+    with TemporaryDirectory() as download_dir:
+        file = FileOP().download_from_url(url=url, download_dir=download_dir, ext_list=['.xlsx'])
+        assert os.path.basename(file) == group_members_file_name
 
-def test_fib():
-    """API Tests"""
-    assert fib(1) == 1
-    assert fib(2) == 1
-    assert fib(7) == 13
-    with pytest.raises(AssertionError):
-        fib(-10)
 
 
-def test_main(capsys):
-    """CLI Tests"""
-    # capsys is a pytest fixture that allows asserts against stdout/stderr
-    # https://docs.pytest.org/en/stable/capture.html
-    main(["7"])
-    captured = capsys.readouterr()
-    assert "The 7-th Fibonacci number is 13" in captured.out
+
