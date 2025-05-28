@@ -99,6 +99,9 @@ class FileOP:
         :return: file path of output file
         """
         output_file_name = os.path.basename(url)
+        base_ext_list = ['.json', '.csv', '.pickle', '.parquet', '.ckpt', '.pth', '.xlsx']
+        if ext_list is None:
+            ext_list = base_ext_list
         if ext_list is not None:
             ext_in_url = [xt for xt in ext_list if xt in url]
             if len(ext_in_url) > 0:
@@ -136,7 +139,7 @@ class FileOP:
                         if delete_after_extract:
                             os.unlink(output_file)
                             logger.info(f'Deleted compressed file {output_file}')
-                elif xt in ['.json', '.csv', '.pickle', '.parquet', '.ckpt', '.pth']:
+                elif xt in ext_list:
                     print(f'Created {xt} file.')
                 else:
                     print(f'File: {xt} loaded.')
