@@ -1,6 +1,7 @@
-FROM python:3.11 AS base
+FROM python:3.12 AS base
 
-ARG DEV_cadence
+# Install UV
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 ENV \
     PYTHONDONTWRITEBYTECODE=1 \
@@ -11,31 +12,35 @@ ENV \
     PIP_DISABLE_PIP_VERSION_CHECK=on \
     PIP_DEFAULT_TIMEOUT=100 \
     PIP_SRC=/src \
-    PIPENV_HIDE_EMOJIS=true \
     NO_COLOR=true \
-    PIPENV_NOSPIN=true
-
-# Port for JupyterLab server
+    UV_COMPILE_BYTECODE=1 \
+    UV_SYSTEM_PYTHON=true \
+    UV_PYTHON_DOWNLOADS=never \
+    UV_PYTHON_PREFERENCE=only-system \
+    UV_LINK_MODE=copy \
+    UV_PROJECT_ENVIRONMENT=/usr/local
+    
+# Ports for jupyter and tensorboard
 EXPOSE 8888
 
 RUN mkdir -p /app
 WORKDIR /app
 
-# Pip and pipenv
-RUN pip install --upgrade pip
-RUN pip install pipenv
-
-# Some package stuff
-COPY setup.py ./
+# Copy the project files to create the environment
+COPY README.md .
 COPY src/cadence/__init__.py src/cadence/__init__.py
 
-# Install dependencies
-COPY Pipfile Pipfile.lock ./
-RUN --mount=source=.git,target=.git,type=bind \
-    pipenv install --system --deploy --ignore-pipfile --dev
+# Install the project's dependencies using the lockfile and settings
+RUN --mount=type=cache,target=/root/.cache/uv \
+    --mount=type=bind,source=.git,target=.git \
+    --mount=type=bind,source=uv.lock,target=uv.lock \
+    --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
+     uv sync --frozen
 
-# Run the jupyter lab server
+# Copy bash scripts and set executable flags
 RUN mkdir -p /run_scripts
-COPY /bash_scripts/docker_entry /run_scripts
+COPY /bash_scripts/* /run_scripts
 RUN chmod +x /run_scripts/*
+
+# Run the jupyter server
 CMD ["/bin/bash", "/run_scripts/docker_entry"]
