@@ -6,20 +6,31 @@ services:
       context: .
       network: host
       dockerfile: Dockerfile
-      args:
-        - DEV_cadence=1
     ipc: host
     environment:
-    #- AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-    #- AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
     - HOME=/app
-    - DATA_DIR=/app/data
+    - DATA=/app/data
     ports:
       - "8888:8888"
     volumes:
       - .:/app
-      - /home/andreas/data:/app/data
+      - app_data:/app/data
+    develop:
+      # Create a `watch` configuration to update the app
+      # https://docs.docker.com/compose/file-watch/#compose-watch-versus-bind-mounts
+      watch:
+        # Sync the working directory with the `/app` directory in the container
+        - action: sync
+          path: .
+          target: /app
+          # Exclude the project virtual environment — it could be for a
+          # different platform in the container
+          ignore:
+            - .venv/
+        # Rebuild the image if dependencies change by checking uv.lock
+        - action: rebuild
+          path: ./uv.lock
 
-#volumes:
-#  appdata:
-#    external: false
+volumes:
+  app_data:
+    external: false
