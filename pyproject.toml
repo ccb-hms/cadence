@@ -29,4 +29,5 @@ build-backend = "hatchling.build"
 dev = [
     "ipywidgets>=8.1.7",
     "jupyterlab>=4.4.3",
+    "pytest>=8.3.5",
 ]
