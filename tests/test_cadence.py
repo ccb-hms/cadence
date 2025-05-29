@@ -1,4 +1,3 @@
-import pytest
 import os
 from tempfile import TemporaryDirectory
 from cadence.utils import FileOP
