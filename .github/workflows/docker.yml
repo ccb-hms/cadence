@@ -1,10 +1,8 @@
 name: docker
 on:
-  pull_request:
   push:
     branches:
-      - develop
-      - main
+      - "main"
 jobs:
   test:
     name: Run tests in docker container
