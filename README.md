@@ -1,7 +1,5 @@
 [![python](https://img.shields.io/badge/Python-3.12-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
-
 [![pytest](https://github.com/ccb-hms/cadence/actions/workflows/pytest.yml/badge.svg?branch=main)](https://github.com/ccb-hms/cadence/actions/workflows/pytest.yml)
-
 [![docker](https://github.com/ccb-hms/cadence/actions/workflows/docker.yml/badge.svg)](https://github.com/ccb-hms/cadence/actions/workflows/docker.yml)
 
 
