@@ -1,0 +1,9 @@
+#!/bin/bash
+if [ ! -f "../cadence.sif" ]; then
+	( cd .. && docker compose build )
+	apptainer build ../cadence.sif docker-daemon://cadence:latest
+fi
+apptainer run \
+				--mount type=bind,src="..",dst="/app" \
+				../cadence.sif
+				
