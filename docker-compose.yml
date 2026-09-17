@@ -9,12 +9,14 @@ services:
     ipc: host
     environment:
     - HOME=/app
-    - DATA=/app/data
+    - DATA_DIR=/app/data
     ports:
       - "8888:8888"
     volumes:
       - .:/app
-      - app_data:/app/data
+      - ${DATA_DIR:-./data}:/app/data
+    env_file:
+      - .env
     develop:
       # Create a `watch` configuration to update the app
       # https://docs.docker.com/compose/file-watch/#compose-watch-versus-bind-mounts
@@ -30,7 +32,3 @@ services:
         # Rebuild the image if dependencies change by checking uv.lock
         - action: rebuild
           path: ./uv.lock
-
-volumes:
-  app_data:
-    external: false
